@@ -3,10 +3,10 @@ body {
   height: 100%;
   font-family: "Courier New", Courier, monospace;
   margin: 0;
+  background: #222;
 }
-
-body {
-  background: url("img/DSC05438.JPG") center / cover no-repeat fixed;
+body.home {
+  background: url("img/hintergrund.jpg") center / cover no-repeat fixed;
 }
 
 h1,
