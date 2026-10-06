@@ -3,10 +3,18 @@ body {
   height: 100%;
   font-family: "Courier New", Courier, monospace;
   margin: 0;
-  background: #222;
+  background: #222222;
 }
 body.home {
   background: url("img/hintergrund.jpg") center / cover no-repeat fixed;
+}
+
+body.kontakt {
+  background-color: #5b5b5b;
+}
+
+body.ueber_mich {
+  background-color: #edf7b5;
 }
 
 h1,
