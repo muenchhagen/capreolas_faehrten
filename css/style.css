@@ -1,3 +1,4 @@
+/* ========== SCHRIFT ========== */
 @font-face {
   font-family: "Cormorant Garamond";
   src: url("../fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf")
@@ -16,60 +17,67 @@
   font-display: swap;
 }
 
-html,
-body {
-  height: 100%;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  margin: 0;
-  background: #f0e6d6;
-  color: #1f2420;
+/* ========== FARBEN (hier ändern, gilt für die ganze Seite) ========== */
+:root {
+  --hell: #f0e6d6;
+  --sand: #b9a78f;
+  --text: #1f2420;
+  --dunkel: #2b332d;
+  --braun: #4a4036;
+  --akzent: #c8863a;
+  --akzent-dunkel: #8a4f1a;
 }
-body.home {
-  background: url("../img/fluss_von_oben.jpg") center / cover no-repeat fixed;
+
+/* ========== GRUNDLAGEN ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  height: auto;
-  min-height: 100dvh;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  background: var(--hell);
+  color: var(--text);
 }
 
-body.home main {
+main {
   flex: 1;
-  display: grid;
-  align-content: center; /* vertikal mittig */
-  text-align: center;
-  padding: 0 0 25vh;
-}
-
-body.home h1 {
-  margin: 0;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
   padding: 2rem 1rem;
-  background: #f0e6d6a4;
-  color: #2b332d;
-}
-
-body.kontakt {
-  background-color: #f0e6d6;
-}
-
-body.ueber_mich {
-  background-color: #f0e6d6;
 }
 
 h1,
-h2,
-.logo {
-  font-family: "Cormorant Garamond", Georgia, serif;
+h2 {
   font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: 0.04em;
 }
 
-@media (max-width: 640px) {
-  .logo {
-    font-size: 1.5rem;
-  }
+h1 {
+  font-size: 2.5rem;
 }
 
+h2 {
+  font-size: 1.75rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ========== HEADER ========== */
 .site-header {
   position: sticky;
   top: 0;
@@ -78,13 +86,18 @@ h2,
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem 5rem;
-  background: #2b332d;
-  color: #c8863a;
+  background: var(--dunkel);
 }
 
 .site-header a {
-  color: inherit;
   text-decoration: none;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--akzent);
 }
 
 .site-header nav {
@@ -92,28 +105,56 @@ h2,
   gap: 1.5rem;
 }
 
+.site-header nav a {
+  font-size: 1.25rem;
+  color: var(--hell);
+}
+
 .site-header nav a:hover {
+  color: var(--akzent);
   text-decoration: underline;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 2rem;
-}
-
+/* Menü-Knopf (nur am Handy sichtbar) */
 .nav-toggle {
   display: none;
   background: none;
   border: 0;
-  color: inherit;
   font-size: 1.75rem;
+  color: var(--hell);
   cursor: pointer;
 }
 
+/* ========== STARTSEITE ========== */
+body.home {
+  background: url("../img/fluss_von_oben.jpg") center / cover no-repeat fixed;
+}
+
+body.home main {
+  max-width: none;
+  display: grid;
+  align-content: center; /* Überschrift vertikal mittig */
+  text-align: center;
+  padding: 0 0 25vh; /* höherer Wert = Überschrift weiter oben */
+}
+
+body.home h1 {
+  margin: 0;
+  padding: 2rem 1rem;
+  background: #f0e6d6a4;
+  color: var(--dunkel);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+}
+
+/* ========== HANDY (alles bis 640 px Breite) ========== */
 @media (max-width: 640px) {
   .site-header {
     flex-wrap: wrap;
     padding: 0.75rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
   }
 
   .nav-toggle {
@@ -134,14 +175,38 @@ h2,
   .site-header nav a {
     padding: 0.75rem 0;
   }
-
-  main {
-    padding: 1rem;
-  }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* ========== FOOTER ========== */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 0.6rem 2rem;
+  background: rgb(74 64 54 / 0.7);
+  color: var(--hell);
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.site-footer a {
+  color: var(--hell);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--akzent);
+  text-decoration: underline;
+}
+
+.site-footer small {
+  font-size: inherit;
+  opacity: 0.8;
 }
