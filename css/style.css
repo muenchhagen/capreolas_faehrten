@@ -146,6 +146,33 @@ body.home h1 {
   font-size: clamp(2.5rem, 8vw, 5rem);
 }
 
+/* ========== ÜBER MICH ========== */
+.untertitel {
+  margin-top: -0.5rem;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--braun);
+}
+
+.portrait {
+  max-width: 22rem;
+  margin: 1.5rem 0;
+}
+
+h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.3rem;
+}
+
+main ul {
+  margin-top: 0.25rem;
+  padding-left: 1.2rem;
+}
+
+.zitate p {
+  font-style: italic;
+}
+
 /* ========== HANDY (alles bis 640 px Breite) ========== */
 @media (max-width: 640px) {
   .site-header {
@@ -209,4 +236,12 @@ body.home h1 {
 .site-footer small {
   font-size: inherit;
   opacity: 0.8;
+}
+
+.site-footer .credit {
+  opacity: 0.8;
+}
+
+.site-footer .credit a {
+  text-decoration: underline;
 }
